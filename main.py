@@ -1,6 +1,5 @@
 from random import choice
 from string import ascii_letters, digits, punctuation
-
 """
 SPRINT DE ENTREGA:
 Se solicita como entregable de este Sprint la implementación final de todos los conceptos vistos
@@ -69,8 +68,11 @@ def gestion_usuario(lista_usuarios):
             # se toma la inicial y se une al id de usuario
             nueva_cadena = nueva_cadena + p[0] + str(persona["id"])
         # se almacena nombre de usuario en el diccionario que se encuentra en la lista
-        persona["usuario"] = nueva_cadena
-        print(persona["nombre"], "Su nueva cuenta de usuario es:", persona["usuario"])
+        x["usuario"] = nueva_cadena
+        x["contrasena"] = creador_contraseña()
+        print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
+        print(x["nombre"], "Su nueva clave de usuario es:", x["contrasena"])
+
 
 def creador_contraseña():
     # Definir el número mínimo de caracteres:
@@ -120,3 +122,13 @@ asignador_contraseñas(usuarios)
 
 # Imprimiendo la información de la lista de usuarios con un formato agradable
 impresion_lista(usuarios)
+def numero_telefonico():
+    telefono = input("Ingrese el número telefónico: ")
+    while len(telefono) != 8 or not telefono.isnumeric():
+        print("El número telefónico debe tener 8 DIGITOS (numeros). Inténtelo nuevamente.")
+        telefono = input("Ingrese el número nuevamente: ")
+    return telefono
+
+
+print("Bienvenidos a Progrma de gestion de Usuarios v1")
+gestion_usuario()
