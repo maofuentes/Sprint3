@@ -15,7 +15,7 @@ cumplir con los siguientes criterios: mayúsculas, minúsculas y números.
 tengan un número de contacto asignado.
 - El programa debe verificar que el número telefónico tenga 8 dígitos numéricos.
 - Se debe guardar como un string.
-- 
+
 <h2>A modo de entrega, se debe disponer un documento Word o PDF en el que se indique:</h2>
 
 - Ruta del repositorio en GitHub
