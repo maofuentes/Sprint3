@@ -1,6 +1,6 @@
 # SPRINT 3 GRUPO 27
 
-<!-- SPRINT DE ENTREGA:
+SPRINT DE ENTREGA:
 Se solicita como entregable de este Sprint la implementación final de todos los conceptos vistos
 durante el Módulo 1 de Python básico. Por tanto, se debe poner foco en lo siguiente:
 ● Elaborar un programa que recorra una lista con los nombres de 10 de sus futuros usuarios de tu
@@ -18,4 +18,4 @@ A modo de entrega, se debe disponer un documento Word o PDF en el que se indique
 - Ruta del repositorio en GitHub
 Consideraciones adicionales
 - El código debe estar debidamente indentado
-- El formato del documento Word queda a criterio del equipo. -->
+- El formato del documento Word queda a criterio del equipo.
