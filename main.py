@@ -26,8 +26,7 @@ Consideraciones adicionales
 """
 
 usuarios = [
-    {"id": 1, "nombre": "Miguel Garay Gallardo"
-     },
+    {"id": 1, "nombre": "Miguel Garay Gallardo"},
     {"id": 2, "nombre": "Franco Valdés Navarro"},
     {"id": 3, "nombre": "Viviana Vera Ceballos"},
     {"id": 4, "nombre": "Marcelo Lagos Perez"},
@@ -48,13 +47,14 @@ usuarios = [
 def gestion_usuario(lista_usuarios):
     # se avanza por la lista de usuarios
     for dic_usuario in lista_usuarios:
-        nombre_usuario = dic_usuario["nombre"]
 
-        # se almacena nombre de usuario en el diccionario que se encuentra en la lista
+        # Crea las variables para el nombre de usuario, la contraseña y el ingreso de un número telefónico
+        # Asigna los valores de las variables llamando a las funciones correspondientes
+        nombre_usuario = dic_usuario["nombre"]
         usuario = creador_usuario(dic_usuario)
         contraseña = creador_contraseña()
         telefono = numero_telefonico(nombre_usuario)
-        
+
         # Actualizando los diccionarios
         dic_usuario.update({
             "usuario": usuario,
@@ -119,7 +119,8 @@ def impresion_lista(lista):
 
 
 def numero_telefonico(nombre_usuario):
-    telefono = input("Ingrese el número telefónico para " + nombre_usuario + ": ")
+    telefono = input("Ingrese el número telefónico para " +
+                     nombre_usuario + ": ")
     while len(telefono) != 8 or not telefono.isnumeric():
         print("El número telefónico debe tener 8 DIGITOS (numeros). Inténtelo nuevamente.")
         telefono = input("Ingrese el número nuevamente: ")
