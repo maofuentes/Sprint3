@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 from string import ascii_letters, digits, punctuation
 """
 SPRINT DE ENTREGA:
@@ -26,16 +26,17 @@ Consideraciones adicionales
 """
 
 usuarios = [
-    {"id": 1, "nombre": "Miguel Garay Gallardo","teléfono": 98547621, "usuario": "", "contrasena": ""},
-    {"id": 2, "nombre": "Franco Valdés Navarro","teléfono": 36521478, "usuario": "", "contrasena": ""},
-    {"id": 3, "nombre": "Viviana Vera Ceballos","teléfono": 14785296, "usuario": "", "contrasena": ""},
-    {"id": 4, "nombre": "Marcelo Lagos Perez","teléfono": 36985214, "usuario": "", "contrasena": ""},
-    {"id": 5, "nombre": "Olivia Norambuena Johnson","teléfono": 36975214, "usuario": "", "contrasena": ""},
-    {"id": 6, "nombre": "Francisco Sinatra Olivares","teléfono": 36989814, "usuario": "", "contrasena": ""},
-    {"id": 7, "nombre": "Orlando Borquez Diaz","teléfono": 96985214, "usuario": "", "contrasena": ""},
-    {"id": 8, "nombre": "Nicolás Ríos Gonzalez","teléfono": 87985214, "usuario": "", "contrasena": ""},
-    {"id": 9, "nombre": "Ivania Salas Sierra","teléfono": 98521434, "usuario": "", "contrasena": ""},
-    {"id": 10, "nombre": "Rosalia Garate López","teléfono": 86985214, "usuario": "", "contrasena": ""}
+    {"id": 1, "nombre": "Miguel Garay Gallardo"
+     },
+    {"id": 2, "nombre": "Franco Valdés Navarro"},
+    {"id": 3, "nombre": "Viviana Vera Ceballos"},
+    {"id": 4, "nombre": "Marcelo Lagos Perez"},
+    {"id": 5, "nombre": "Olivia Norambuena Johnson"},
+    {"id": 6, "nombre": "Francisco Sinatra Olivares"},
+    {"id": 7, "nombre": "Orlando Borquez Diaz"},
+    {"id": 8, "nombre": "Nicolás Ríos Gonzalez"},
+    {"id": 9, "nombre": "Ivania Salas Sierra"},
+    {"id": 10, "nombre": "Rosalia Garate López"}
 ]
 
 # FUNCIONES
@@ -46,24 +47,33 @@ usuarios = [
 
 def gestion_usuario(lista_usuarios):
     # se avanza por la lista de usuarios
-    for persona in lista_usuarios:
-        # se toma el nombre completo
-        parte1 = persona["nombre"]
-        # se separa por los espacios
-        palabras = parte1.split()
-        # se crea una cadena vacia
-        nueva_cadena = ""
-        # se recorre esa cadena
-        for p in palabras:
-            # se toma la inicial y se une al id de usuario
-            nueva_cadena = nueva_cadena + p[0] + str(persona["id"])
+    for dic_usuario in lista_usuarios:
+
         # se almacena nombre de usuario en el diccionario que se encuentra en la lista
-        x["usuario"] = nueva_cadena
-        x["contrasena"] = creador_contraseña()
-        print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
-        print(x["nombre"], "Su nueva clave de usuario es:", x["contrasena"])
-        x["telefono"] = numero_telefonico()
-        print(x["nombre"], "El telefono ingresado es:", x["telefono"])
+        usuario = creador_usuario(dic_usuario)
+        contraseña = creador_contraseña()
+        telefono = numero_telefonico()
+        
+        # Actualizando los diccionarios
+        dic_usuario.update({
+            "usuario": usuario,
+            "contraseña": contraseña,
+            "teléfono": telefono
+        })
+
+
+def creador_usuario(diccionario_usuario):
+    # se toma el nombre completo
+    parte1 = diccionario_usuario["nombre"]
+    # se separa por los espacios
+    palabras = parte1.split()
+    # se crea una cadena vacia
+    nueva_cadena = ""
+    # se recorre esa cadena
+    for letra in palabras:
+        # se toma la inicial y se une al id de usuario
+        nueva_cadena = nueva_cadena + letra[0] + str(diccionario_usuario["id"])
+    return nueva_cadena
 
 
 def creador_contraseña():
@@ -89,22 +99,35 @@ def creador_contraseña():
     # Devuelve la contraseña creada
     return contraseña
 
+
 def asignador_contraseñas(lista_usuarios):
     # Itera sobre la lista de usuarios y les otorga una contraseña al llamar a la función creador_contraseña
-    
+
     for persona in lista_usuarios:
         contraseña = creador_contraseña()
-        persona.update({"contraseña":contraseña})
+        persona.update({"contraseña": contraseña})
+
 
 def impresion_lista(lista):
     for diccionario in lista:
         for key in diccionario:
-            if key == "nombre":
+            if key == "id":
                 print(f"{key}: {diccionario[key]}")
             else:
                 print(f"    {key}: {diccionario[key]}")
 
+
+def numero_telefonico():
+    telefono = input("Ingrese el número telefónico: ")
+    while len(telefono) != 8 or not telefono.isnumeric():
+        print("El número telefónico debe tener 8 DIGITOS (numeros). Inténtelo nuevamente.")
+        telefono = input("Ingrese el número nuevamente: ")
+    return telefono
+
+
 # EJECUCIÓN
+
+print("Bienvenidos a Progrma de gestion de Usuarios v2")
 
 # Agregando los nombres de usuarios
 gestion_usuario(usuarios)
@@ -114,13 +137,3 @@ asignador_contraseñas(usuarios)
 
 # Imprimiendo la información de la lista de usuarios con un formato agradable
 impresion_lista(usuarios)
-def numero_telefonico():
-    telefono = input("Ingrese el número telefónico: ")
-    while len(telefono) != 8 or not telefono.isnumeric():
-        print("El número telefónico debe tener 8 DIGITOS (numeros). Inténtelo nuevamente.")
-        telefono = input("Ingrese el número nuevamente: ")
-    return telefono
-
-
-print("Bienvenidos a Progrma de gestion de Usuarios v1")
-gestion_usuario()
