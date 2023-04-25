@@ -1,9 +1,5 @@
 from random import choice
 from string import ascii_letters, digits, punctuation
-<<<<<<< HEAD
-=======
-
->>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
 """
 SPRINT DE ENTREGA:
 Se solicita como entregable de este Sprint la implementación final de todos los conceptos vistos
