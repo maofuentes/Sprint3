@@ -49,14 +49,17 @@ usuarios = [
         "teléfono": 86985214, "usuario": "", "contrasena": ""}
 ]
 
-# funcion de gestion y creacion de cuentas de usuario
+# FUNCIONES
+
+# Funcion de gestion y creacion de cuentas de usuario
+# Franco: Cambié la función para que acepte la lista que desea ordenar y no esté definida dentro del alcance de la misma.
 
 
-def gestion_usuario():
+def gestion_usuario(lista_usuarios):
     # se avanza por la lista de usuarios
-    for x in usuarios:
+    for persona in lista_usuarios:
         # se toma el nombre completo
-        parte1 = x["nombre"]
+        parte1 = persona["nombre"]
         # se separa por los espacios
         palabras = parte1.split()
         # se crea una cadena vacia
@@ -64,14 +67,10 @@ def gestion_usuario():
         # se recorre esa cadena
         for p in palabras:
             # se toma la inicial y se une al id de usuario
-            nueva_cadena = nueva_cadena + p[0] + str(x["id"])
+            nueva_cadena = nueva_cadena + p[0] + str(persona["id"])
         # se almacena nombre de usuario en el diccionario que se encuentra en la lista
-        x["usuario"] = nueva_cadena
-        print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
-
-
-gestion_usuario()
-
+        persona["usuario"] = nueva_cadena
+        print(persona["nombre"], "Su nueva cuenta de usuario es:", persona["usuario"])
 
 def creador_contraseña():
     # Definir el número mínimo de caracteres:
@@ -95,3 +94,29 @@ def creador_contraseña():
 
     # Devuelve la contraseña creada
     return contraseña
+
+def asignador_contraseñas(lista_usuarios):
+    # Itera sobre la lista de usuarios y les otorga una contraseña al llamar a la función creador_contraseña
+    
+    for persona in lista_usuarios:
+        contraseña = creador_contraseña()
+        persona.update({"contraseña":contraseña})
+
+def impresion_lista(lista):
+    for diccionario in lista:
+        for key in diccionario:
+            if key == "nombre":
+                print(f"{key}: {diccionario[key]}")
+            else:
+                print(f"    {key}: {diccionario[key]}")
+
+# EJECUCIÓN
+
+# Agregando los nombres de usuarios
+gestion_usuario(usuarios)
+
+# Asignando contraseñas de manera aleatoria de acuerdo con los requerimientos
+asignador_contraseñas(usuarios)
+
+# Imprimiendo la información de la lista de usuarios con un formato agradable
+impresion_lista(usuarios)
