@@ -1,5 +1,9 @@
 from random import choice
 from string import ascii_letters, digits, punctuation
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
 """
 SPRINT DE ENTREGA:
 Se solicita como entregable de este Sprint la implementación final de todos los conceptos vistos
@@ -25,38 +29,58 @@ Consideraciones adicionales
 
 """
 
-usuarios  = [
-        { "id" : 1 , "nombre" : "Miguel Garay Gallardo" , "teléfono" : 98547621 , "usuario": "" , "contrasena":""},
-        { "id" : 2 , "nombre" : "Franco Valdés Navarro" , "teléfono" : 36521478, "usuario":"" , "contrasena":"" },
-        { "id" : 3 , "nombre" : "Viviana Vera Ceballos" , "teléfono" : 14785296, "usuario":"" , "contrasena":""},
-        { "id" : 4 , "nombre" : "Marcelo Lagos Perez" , "teléfono" : 36985214,"usuario":"" , "contrasena":""},
-        {"id" : 5 , "nombre" : "Olivia Norambuena Johnson" , "teléfono" : 36975214,"usuario":"" , "contrasena":"" },
-        {"id" : 6 , "nombre" : "Francisco Sinatra Olivares" , "teléfono" : 36989814,"usuario":"" , "contrasena":"" },
-        {"id" : 7 , "nombre" : "Orlando Borquez Diaz" , "teléfono" : 96985214,"usuario":"" , "contrasena":"" },
-        {"id" : 8 , "nombre" : "Nicolás Ríos Gonzalez" , "teléfono" : 87985214,"usuario":"" , "contrasena":"" },
-        {"id" : 9 , "nombre" : "Ivania Salas Sierra" , "teléfono" : 98521434,"usuario":"" , "contrasena":"" },
-        {"id" : 10 , "nombre" : "Rosalia Garate López" , "teléfono" : 86985214,"usuario":"" , "contrasena":""}
+usuarios = [
+    {"id": 1, "nombre": "Miguel Garay Gallardo",
+        "teléfono": 98547621, "usuario": "", "contrasena": ""},
+    {"id": 2, "nombre": "Franco Valdés Navarro",
+        "teléfono": 36521478, "usuario": "", "contrasena": ""},
+    {"id": 3, "nombre": "Viviana Vera Ceballos",
+        "teléfono": 14785296, "usuario": "", "contrasena": ""},
+    {"id": 4, "nombre": "Marcelo Lagos Perez",
+        "teléfono": 36985214, "usuario": "", "contrasena": ""},
+    {"id": 5, "nombre": "Olivia Norambuena Johnson",
+        "teléfono": 36975214, "usuario": "", "contrasena": ""},
+    {"id": 6, "nombre": "Francisco Sinatra Olivares",
+        "teléfono": 36989814, "usuario": "", "contrasena": ""},
+    {"id": 7, "nombre": "Orlando Borquez Diaz",
+        "teléfono": 96985214, "usuario": "", "contrasena": ""},
+    {"id": 8, "nombre": "Nicolás Ríos Gonzalez",
+        "teléfono": 87985214, "usuario": "", "contrasena": ""},
+    {"id": 9, "nombre": "Ivania Salas Sierra",
+        "teléfono": 98521434, "usuario": "", "contrasena": ""},
+    {"id": 10, "nombre": "Rosalia Garate López",
+        "teléfono": 86985214, "usuario": "", "contrasena": ""}
 ]
+
 # funcion de gestion y creacion de cuentas de usuario
+
+
 def gestion_usuario():
-#se avanza por la lista de usuarios 
+    # se avanza por la lista de usuarios
     for x in usuarios:
-        #se toma el nombre completo
+        # se toma el nombre completo
         parte1 = x["nombre"]
-        #se separa por los espacios
+        # se separa por los espacios
         palabras = parte1.split()
-        #se crea una cadena vacia
+        # se crea una cadena vacia
         nueva_cadena = ""
-        #se recorre esa cadena
+        # se recorre esa cadena
         for p in palabras:
-            #se toma la inicial y se une al id de usuario
+            # se toma la inicial y se une al id de usuario
             nueva_cadena = nueva_cadena + p[0] + str(x["id"])
-        #se almacena nombre de usuario en el diccionario que se encuentra en la lista
+        # se almacena nombre de usuario en el diccionario que se encuentra en la lista
         x["usuario"] = nueva_cadena
         x["contrasena"] = creador_contraseña()
         print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
         print(x["nombre"], "Su nueva clave de usuario es:", x["contrasena"])
 
+<<<<<<< HEAD
+=======
+
+gestion_usuario()
+
+
+>>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
 def creador_contraseña():
     # Definir el número mínimo de caracteres:
     largo = 8
@@ -78,7 +102,11 @@ def creador_contraseña():
             break
 
     # Devuelve la contraseña creada
+<<<<<<< HEAD
     return contraseña      
 
 print("Bienvenido a programa de gestion de Usuario V1.0")
 gestion_usuario()
+=======
+    return contraseña
+>>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
