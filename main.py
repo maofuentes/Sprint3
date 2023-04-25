@@ -26,26 +26,16 @@ Consideraciones adicionales
 """
 
 usuarios = [
-    {"id": 1, "nombre": "Miguel Garay Gallardo",
-        "teléfono": 98547621, "usuario": "", "contrasena": ""},
-    {"id": 2, "nombre": "Franco Valdés Navarro",
-        "teléfono": 36521478, "usuario": "", "contrasena": ""},
-    {"id": 3, "nombre": "Viviana Vera Ceballos",
-        "teléfono": 14785296, "usuario": "", "contrasena": ""},
-    {"id": 4, "nombre": "Marcelo Lagos Perez",
-        "teléfono": 36985214, "usuario": "", "contrasena": ""},
-    {"id": 5, "nombre": "Olivia Norambuena Johnson",
-        "teléfono": 36975214, "usuario": "", "contrasena": ""},
-    {"id": 6, "nombre": "Francisco Sinatra Olivares",
-        "teléfono": 36989814, "usuario": "", "contrasena": ""},
-    {"id": 7, "nombre": "Orlando Borquez Diaz",
-        "teléfono": 96985214, "usuario": "", "contrasena": ""},
-    {"id": 8, "nombre": "Nicolás Ríos Gonzalez",
-        "teléfono": 87985214, "usuario": "", "contrasena": ""},
-    {"id": 9, "nombre": "Ivania Salas Sierra",
-        "teléfono": 98521434, "usuario": "", "contrasena": ""},
-    {"id": 10, "nombre": "Rosalia Garate López",
-        "teléfono": 86985214, "usuario": "", "contrasena": ""}
+    {"id": 1, "nombre": "Miguel Garay Gallardo","teléfono": 98547621, "usuario": "", "contrasena": ""},
+    {"id": 2, "nombre": "Franco Valdés Navarro","teléfono": 36521478, "usuario": "", "contrasena": ""},
+    {"id": 3, "nombre": "Viviana Vera Ceballos","teléfono": 14785296, "usuario": "", "contrasena": ""},
+    {"id": 4, "nombre": "Marcelo Lagos Perez","teléfono": 36985214, "usuario": "", "contrasena": ""},
+    {"id": 5, "nombre": "Olivia Norambuena Johnson","teléfono": 36975214, "usuario": "", "contrasena": ""},
+    {"id": 6, "nombre": "Francisco Sinatra Olivares","teléfono": 36989814, "usuario": "", "contrasena": ""},
+    {"id": 7, "nombre": "Orlando Borquez Diaz","teléfono": 96985214, "usuario": "", "contrasena": ""},
+    {"id": 8, "nombre": "Nicolás Ríos Gonzalez","teléfono": 87985214, "usuario": "", "contrasena": ""},
+    {"id": 9, "nombre": "Ivania Salas Sierra","teléfono": 98521434, "usuario": "", "contrasena": ""},
+    {"id": 10, "nombre": "Rosalia Garate López","teléfono": 86985214, "usuario": "", "contrasena": ""}
 ]
 
 # funcion de gestion y creacion de cuentas de usuario
@@ -69,6 +59,8 @@ def gestion_usuario():
         x["contrasena"] = creador_contraseña()
         print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
         print(x["nombre"], "Su nueva clave de usuario es:", x["contrasena"])
+        x["telefono"] = numero_telefonico()
+        print(x["nombre"], "El telefono ingresado es:", x["telefono"])
 
 
 def creador_contraseña():
