@@ -94,6 +94,13 @@ def creador_contraseña():
     # Devuelve la contraseña creada
     return contraseña
 
+def numero_telefonico():
+    telefono = input("Ingrese el número telefónico: ")
+    while len(telefono) != 8 or not telefono.isnumeric():
+        print("El número telefónico debe tener 8 DIGITOS (numeros). Inténtelo nuevamente.")
+        telefono = input("Ingrese el número nuevamente: ")
+    return telefono
+
 
 print("Bienvenidos a Progrma de gestion de Usuarios v1")
 gestion_usuario()
