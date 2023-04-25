@@ -74,13 +74,7 @@ def gestion_usuario():
         print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
         print(x["nombre"], "Su nueva clave de usuario es:", x["contrasena"])
 
-<<<<<<< HEAD
-=======
 
-gestion_usuario()
-
-
->>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
 def creador_contraseña():
     # Definir el número mínimo de caracteres:
     largo = 8
@@ -102,11 +96,8 @@ def creador_contraseña():
             break
 
     # Devuelve la contraseña creada
-<<<<<<< HEAD
-    return contraseña      
-
-print("Bienvenido a programa de gestion de Usuario V1.0")
-gestion_usuario()
-=======
     return contraseña
->>>>>>> bbb2da0f61029c7b1429a418c650406007e7def4
+
+
+print("Bienvenidos a Progrma de gestion de Usuarios v1")
+gestion_usuario()
