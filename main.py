@@ -23,7 +23,6 @@ Consideraciones adicionales
 
 """
 
-
 usuarios  = [
         { "id" : 1 , "nombre" : "Miguel Garay Gallardo" , "teléfono" : 98547621 , "usuario": "" , "contrasena":""},
         { "id" : 2 , "nombre" : "Franco Valdés Navarro" , "teléfono" : 36521478, "usuario":"" , "contrasena":"" },
@@ -36,14 +35,21 @@ usuarios  = [
         {"id" : 9 , "nombre" : "Ivania Salas Sierra" , "teléfono" : 98521434,"usuario":"" , "contrasena":"" },
         {"id" : 10 , "nombre" : "Rosalia Garate López" , "teléfono" : 86985214,"usuario":"" , "contrasena":""}
 ]
-#gestion y creacion de usuario
+# funcion de gestion y creacion de cuentas de usuario
 def gestion_usuario():
+#se avanza por la lista de usuarios 
     for x in usuarios:
+        #se toma el nombre completo
         parte1 = x["nombre"]
+        #se separa por los espacios
         palabras = parte1.split()
+        #se crea una cadena vacia
         nueva_cadena = ""
+        #se recorre esa cadena
         for p in palabras:
+            #se toma la inicial y se une al id de usuario
             nueva_cadena = nueva_cadena + p[0] + str(x["id"])
+        #se almacena nombre de usuario en el diccionario que se encuentra en la lista
         x["usuario"] = nueva_cadena
         print(x["nombre"], "Su nueva cuenta de usuario es:", x["usuario"])
 
